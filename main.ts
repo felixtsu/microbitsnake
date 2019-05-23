@@ -1,2 +1,0 @@
-custom.onPlayGame(function () {
-})
