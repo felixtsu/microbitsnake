@@ -8,11 +8,12 @@
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "cubicbird.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": false,
-    "additionalFilePaths": []
+    "installedVersion": "workspace:1537557c-1bb6-45b9-310f-fabeb4f47190"
 }
