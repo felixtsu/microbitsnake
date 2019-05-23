@@ -19,9 +19,9 @@ namespace snake{
     let cycle = 0
 
     function initSnakeGame() {
-        drawSnake22()
-        genFood22()
-        drawFood222(0)
+        drawSnake()
+        genFood()
+        drawFood(0)
     }
 
     /**
@@ -173,7 +173,7 @@ namespace snake{
         }
     }
 
-    function moveHead22() {
+    function moveHead() {
         if (direction == "U") {
             head[1] = head[1] - 1
         } else if (direction == "D") {
@@ -186,28 +186,28 @@ namespace snake{
         snakeX.insertAt(0, head[0])
         snakeY.insertAt(0, head[1])
     }
-    function drawSnake22() {
+    function drawSnake() {
         for (let j = 0; j <= snakeX.length - 1; j++) {
             led.plot(snakeX[j], snakeY[j])
         }
     }
-    function isDead22() {
+    function isDead() {
         if (head[0] < 0 || head[0] > 4) {
-            endGame222()
+            endGame()
         }
         if (head[1] < 0 || head[1] > 4) {
-            endGame222()
+            endGame()
         }
         if (led.point(head[0], head[1])) {
             if (food[0] == head[0] && food[1] == head[1]) {
                 score += 1
                 ateFood = true
             } else {
-                endGame222()
+                endGame()
             }
         }
     }
-    function genFood22() {
+    function genFood() {
         successfulGen = false
         while (!(successfulGen)) {
             let temp = [Math.randomRange(0, 4), Math.randomRange(0, 4)]
@@ -218,7 +218,7 @@ namespace snake{
             }
         }
     }
-    function drawFood222(cycle: number) {
+    function drawFood(cycle: number) {
         if (cycle % 2 == 0) {
             led.plot(food[0], food[1])
         } else {
@@ -234,10 +234,10 @@ namespace snake{
         }
     }
 
-    function endGame222() {
+    function endGame() {
         gameEnd = true
     }
-    function moveSnake22() {
+    function moveSnake() {
         led.plot(head[0], head[1])
         if (!(ateFood)) {
             led.unplot(snakeX.pop(), snakeY.pop())
@@ -247,7 +247,7 @@ namespace snake{
     }
     function genFoodIfNecessary() {
         if (ateFood) {
-            genFood22()
+            genFood()
         }
     }
 
@@ -273,13 +273,13 @@ namespace snake{
             updateLeftFacingBlockV2()
             updateRightFacingBlockV2()
             playGameHandler()
-            moveHead22()
-            isDead22()
+            moveHead()
+            isDead()
             judgeGameEnd()
             genFoodIfNecessary()
-            moveSnake22()
+            moveSnake()
         } else {
-            drawFood222(cycle)
+            drawFood(cycle)
         }
 
     })
