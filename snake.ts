@@ -47,19 +47,19 @@ namespace snake {
         }
 
         frontIsBlocked(): boolean {
-            return this.validUnoccypiedPosition(this.nextHead())
+            return !this.validUnoccypiedPosition(this.nextHead())
         }
 
         leftIsBlocked(): boolean {
             this.turnLeft()
-            let result = this.validUnoccypiedPosition(this.nextHead())
+            let result = !this.validUnoccypiedPosition(this.nextHead())
             this.turnRight()
             return result
         }
 
         rightIsBlocked(): boolean {
             this.turnRight()
-            let result = this.validUnoccypiedPosition(this.nextHead())
+            let result = !this.validUnoccypiedPosition(this.nextHead())
             this.turnLeft()
             return result
         }
