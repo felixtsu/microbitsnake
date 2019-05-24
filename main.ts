@@ -9,6 +9,7 @@ snake.onPlayGame(function () {
     }
 }) 
  */
+/*
 snake.initSnakeGame(snake.Mode.PROGRAMMING)
 
 let decision = 0
@@ -34,3 +35,4 @@ snake.onGameTick(function () {
         snake.turnRight()
     }
 })
+*/
