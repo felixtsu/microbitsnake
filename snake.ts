@@ -112,7 +112,7 @@ namespace snake {
                 }
                 this.moveHead()
 
-                if (this.validUnoccypiedPosition(this.head)) {
+                if (!this.validUnoccypiedPosition(this.head)) {
                     this._gameEnd = true;
                 } else {
                     if (!this.ateFood()) {
@@ -144,12 +144,12 @@ namespace snake {
 
         validUnoccypiedPosition(head: number[]): boolean {
             if (head[0] < 0 || head[0] > 4) {
-                return true
+                return false
             }
             if (head[1] < 0 || head[1] > 4) {
-                return true
+                return false
             }
-            return this.overlapWithSnake(head, false)
+            return !this.overlapWithSnake(head, false)
         }
 
         ateFood(): boolean {
