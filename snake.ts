@@ -2,7 +2,7 @@
  * Snake by Cubicbird helper blocks
  */
 //% weight=100 color=#F3A21B icon="\uF4BA"
-namespace snake{
+namespace snake {
 
     let successfulGen = false
     let food: number[] = []
@@ -226,8 +226,6 @@ namespace snake{
         }
     }
 
-
-
     function judgeGameEnd() {
         if (gameEnd) {
             basic.pause(10000000)
@@ -261,27 +259,39 @@ namespace snake{
         playGameHandler = handler
     }
 
-    initSnakeGame()
+    function updateStatus() {
+        cycle++
+        moveHead()
+        isDead()
+        judgeGameEnd()
+        genFoodIfNecessary()
+        moveSnake()
 
-    basic.forever(function () {
-        basic.pause(20)
-        if (cycle++ % 4 == 0) {
-            isFacingBlock = false
-            isLeftSideBlocked = false
-            isRightSideBlocked = false
-            updateFacingBlockV2()
-            updateLeftFacingBlockV2()
-            updateRightFacingBlockV2()
-            playGameHandler()
-            moveHead()
-            isDead()
-            judgeGameEnd()
-            genFoodIfNecessary()
-            moveSnake()
-        } else {
-            drawFood(cycle)
-        }
+        isFacingBlock = false
+        isLeftSideBlocked = false
+        isRightSideBlocked = false
+        updateFacingBlockV2()
+        updateLeftFacingBlockV2()
+        updateRightFacingBlockV2()
+    }
 
-    })
+    function render() {
+
+    }
+
+    //initSnakeGame()
+    /*
+        basic.forever(function () {
+            basic.pause(20)
+            if (cycle++ % 4 == 0) {
+                playGameHandler()    
+                updateStatus()
+                render()
+            } else {
+                drawFood(cycle)
+            }
+    
+        })
+        */
 }
 
