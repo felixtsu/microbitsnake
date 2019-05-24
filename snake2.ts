@@ -197,6 +197,12 @@ namespace snake2 {
 
     let coreEngine: CoreEngine
 
+    /**
+       * init snake game 
+       * in Manual Mode, press A to turn left, B to turn right
+       * in Programming Mode, write your decision making login in side a "Make a move" block
+       */
+    //% block
     export function initSnakeGame(mode: Mode) {
         coreEngine = new CoreEngine()
 
