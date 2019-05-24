@@ -195,7 +195,7 @@ namespace snake {
 
     }
 
-    let coreEngine: CoreEngine
+    let coreEngine: CoreEngine = new CoreEngine()
 
     /**
        * init snake game 
@@ -204,7 +204,6 @@ namespace snake {
        */
     //% block
     export function initSnakeGame(mode: Mode) {
-        coreEngine = new CoreEngine()
 
         if (mode == Mode.MANUAL) {
             input.onButtonPressed(Button.A, function () {
