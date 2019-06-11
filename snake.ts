@@ -288,28 +288,32 @@ namespace snake {
     /**
      * return x coordinate of food
      */
-    export function foodX():number{
+    //% block
+    export function foodX(): number {
         return coreEngine.food[0]
     }
 
     /**
      * return y coordinate of food
      */
-    export function foodY():number{
+    //% block
+    export function foodY(): number {
         return coreEngine.food[1]
     }
-    
+
     /**
      * return x coordinate of snake head
      */
-    export function headX():number{
+    //% block
+    export function headX(): number {
         return coreEngine.head[0]
     }
 
     /**
      * return y coordinate of snake head
      */
-    export function headY():number{
+    //% block
+    export function headY(): number {
         return coreEngine.head[1]
     }
 
